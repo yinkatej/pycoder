@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Editor</title>
+    <link th:href="@{/resource/css/Editor.css}" rel="stylesheet"/>
+    <link th:href="@{/resource/css/index.css}" rel="stylesheet"/>
+    <script th:src="@{/resource/codemirror-5/lib/codemirror.js}"></script>
+    <link rel="stylesheet" th:href="@{/resource/codemirror-5/lib/codemirror.css}">
+    <link rel="stylesheet" th:href="@{/resource/codemirror-5/theme/dracula.css}"/>
+    <script th:src="@{/resource/codemirror-5/mode/python/python.js}"></script>
+    <script th:src="@{/resource/codemirror-5/keymap/sublime.js}" ></script>
+    <script th:src="@{/resource/codemirror-5/addon/edit/closebrackets.js}"></script>
+    <script th:src="@{/resource/codemirror-5/addon/hint/python-hint.js}"></script>
+    <script th:src="@{/resource/codemirror-5/addon/hint/show-hint.js}"></script>
+    <link th:href="@{/resource/codemirror-5/addon/hint/show-hint.css}" rel="stylesheet"/>
+
+    <!-- Brython -->
+    <script th:src="@{/resource/brython/brython.js}"></script>
+    <script th:src="@{/resource/brython/brython_stdlib.js}"></script>
+    <script type="text/python" th:src="@{/resource/evaluate/evaluate.py}"></script>
+    
+</head>
+<body onload="brython(0)">
+    <div class='container'>
+        <div class='head'>
+            <div class='stu-data'>
+                <h4 th:text="${name}">Student Name </h4>
+                <h5>Department</h5>
+                <p>Introduction to Python Programming II</p>
+            </div>
+            <div class='timer'>
+                <h2 id="time">00:00</h2>
+            </div>
+        </div>
+        <div class='main'>
+            <div class='question'>
+                <h3>Problem</h3>
+                <p th:text="${question}"></p>
+            </div>
+            <div class='code'>
+                <textarea name="text" id="textarea" cols="30" rows="10" class="text" ></textarea>
+                <div class='align-right'>
+                    <button class="btn" id="run">Run</button>
+                    <button>Reset</button>
+                    <button>Submit</button>
+                </div>
+                <p><b>Output</b></p>
+                <textarea name="output" id="output" cols="30" rows="10" class="output" readonly></textarea>
+                <!-- <p><b>Error</b></p>
+                <textarea name="error" id="error" cols="30" rows="10" class="output" readonly></textarea> -->
+            </div>
+        </div>
+        <div class="footer">
+            <marquee behavior="" direction=""><p>&copy Systej Infotech 2024</p></marquee>
+        </div>
+    </div>
+
+    <script th:src="@{/resource/js/editor.js}"></script>
+</body>
+</html>
