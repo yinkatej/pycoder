@@ -3,9 +3,11 @@ import sys
 from contextlib import contextmanager
 from traceback import format_exception
 
-from browser import document, html
+from browser import document # type:ignore
 
-
+text_area = document["textarea"]
+run = document["run"]
+output = document["output"]
 @contextmanager
 def redirect_stdio():
     try:
@@ -30,7 +32,7 @@ def run_code(event):
     try:
         code = compile(source_code, "<code>", "exec")
     except SyntaxError as e:
-        error_str = ''.join(format_exception(e))
+        error_str = ''.join(format_exception(e)) # type: ignore
     else:
         with redirect_stdio() as (stdin, stdout):
             stdin.write("This is input\nlast Line\n")
@@ -38,7 +40,7 @@ def run_code(event):
             try:
                 exec(code, {"input": input_})
             except BaseException as e:
-                traceback = format_exception(e)
+                traceback = format_exception(e) # type: ignore
                 del traceback[1]
                 error_str = ''.join(traceback)
             finally:
@@ -50,9 +52,6 @@ def run_code(event):
         else:error='' 
         output.value = f'{output_str.rstrip()} {error}'
 
-text_area = document["textarea"]
-run = document["run"]
-output = document["output"]
-# error = document["error"]
 
+# error = document["error"]
 run.bind("click", run_code)

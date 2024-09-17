@@ -28,17 +28,19 @@ extra["springAiVersion"] = "0.8.1"
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.session:spring-session-core")
-    implementation("org.springframework.session:spring-session-core")
     implementation("org.apache.commons:commons-lang3:3.0")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+    implementation("org.springframework.boot:spring-boot-starter-data-rest")
 
+    implementation("org.springframework.boot:spring-boot-starter-security")
 //    implementation("org.springframework.ai:spring-ai-vertex-ai-gemini-spring-boot-starter")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
     runtimeOnly("com.mysql:mysql-connector-j")
+
 }
 
 //dependencyManagement {

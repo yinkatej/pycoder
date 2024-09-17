@@ -36,3 +36,6 @@ out/
 
 ### VS Code ###
 .vscode/
+### frontend node modules ###
+/src/main/frontend/node_modules/
+/resources/application.yaml

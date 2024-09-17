@@ -1,0 +1,66 @@
+
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+
+>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+
+  <script th:src="@{/resource/js/jquery.min.js}"></script>
+  <link rel="stylesheet" th:href="@{/resource/css/style.css}" />
+</head>
+  <body>
+    <div class="container">
+      <div class="bar">
+        <h2>Welcome Admin</h2>
+      </div>
+      <div class="main">
+        <div class="aside">
+          <button id="upload-student">Upload Student</button>
+          <button id="checker">Check Result</button>
+          <button id="3">Upload Questions</button>
+          <button id="4">Send Feedback</button>
+          <button id="5">Create Admin</button>
+        </div>
+        <div class="active">
+          <div class="one">
+            <h2>Check Student's Result</h2>
+            <div class="check">
+              <input type="text" id="check-value" placeholder="Input Matric" />
+              <input type="button" id="check-result" value="Check Result" />
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Matric</th>
+                  <th>Surname</th>
+                  <th>First Name</th>
+                  <th>Other Name</th>
+
+                  <th>Score</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="two">
+            <h2>Upload Student</h2>
+          <div class="upload">
+            <input type="text" id="matric" placeholder="Input Matric" />
+            <input type="text" id="surname" placeholder="Surname" />
+            <input type="text" id="fname" placeholder="First Name" />
+            <input type="text" id="oname" placeholder="Other Name" />
+            <input type="text" id="email" placeholder="email" />
+            <button id="upload">Upload</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script th:src="@{/resource/js/script.js}"></script>
+  </body>
+</html>

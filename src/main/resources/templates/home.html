@@ -1,29 +1,38 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org" xmlns:style="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:style="http://www.w3.org/1999/xhtml"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link  rel="stylesheet" th:href="@{/resource/css/Login.css}"/>
-    <link  rel="stylesheet" th:href="@{/resource/css/index.css}"/>
-
-</head>
-<body>
-<div class='container'>
-    <form action="#" method="post" th:action="@{/}" th:object="${login}">
-        <div class='wrapper'>
-            <input type='text'  placeholder='Matric' th:field="*{username}" required/>
-            <input type='password'  placeholder='Password' th:field="*{password}" required />
-            <button id='submit'>Login</button>
-            <p style="color:red" th:text="${error}"></p>
+    <link rel="stylesheet" th:href="@{/resource/css/Login.css}" />
+    <link rel="stylesheet" th:href="@{/resource/css/index.css}" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="#" method="post" th:action="@{/}" th:object="${login}">
+        <div class="wrapper">
+          <input
+            type="text"
+            placeholder="Matric"
+            th:field="*{username}"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            th:field="*{password}"
+            required
+          />
+          <button id="submit">Login</button>
+          <p style="color: red" th:text="${error}"></p>
         </div>
-    </form>
+      </form>
+    </div>
 
-
-</div>
-
-
-<script th:src="@{resource/js/login.js}"></script>
-</body>
+    <script th:src="@{resource/js/login.js}"></script>
+  </body>
 </html>
